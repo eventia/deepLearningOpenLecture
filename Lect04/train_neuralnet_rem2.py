@@ -7,12 +7,15 @@ from dataset.mnist import load_mnist
 from two_layer_net import TwoLayerNet
 
 # 데이터 읽기
+#(x_train, t_train), (x_test, t_test) = load_mnist(normalize=True, one_hot_label=True)
 (x_train, t_train), (x_test, t_test) = load_mnist(normalize=True, one_hot_label=True)
+x_train, t_train = x_train[:6000], t_train[:6000] # 1/10 로 줄임
+x_test, t_test = x_test[:1000], t_test[:1000]
 
 network = TwoLayerNet(input_size=784, hidden_size=50, output_size=10)
 
 # 하이퍼파라미터
-iters_num = 10000  # 반복 횟수를 적절히 설정한다.
+iters_num = 1000  # 반복 횟수를 적절히 설정한다.
 train_size = x_train.shape[0]
 batch_size = 100   # 미니배치 크기
 learning_rate = 0.1
@@ -22,13 +25,12 @@ train_acc_list = []
 test_acc_list = []
 
 # 1에폭당 반복 수
-iter_per_epoch = max(train_size / batch_size, 1)
+iter_per_epoch = max(train_size / batch_size, 1)  # 60 = 6000/100
 
-for i in range(iters_num):
+for i in range(iters_num):  # 1000 반복
     # 미니배치 획득
-    batch_mask = np.random.choice(train_size, batch_size)
-    x_batch = x_train[batch_mask]
-    t_batch = t_train[batch_mask]
+    batch_mask = np.random.choice(train_size, batch_size)  # batch_size 100 개 행렬
+    x_batch, t_batch = x_train[batch_mask], t_train[batch_mask]
     # 기울기 계산
     #grad = network.numerical_gradient(x_batch, t_batch)
     grad = network.gradient(x_batch, t_batch)
