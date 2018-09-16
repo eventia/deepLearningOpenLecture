@@ -52,7 +52,6 @@ MNIST 에 대해 살펴보고, 기존의 학습된 신경망으로 인식을 시
 
 
 
-
 ### reference
 
 * 밑바닥부터 시작하는 딥러닝, 사이토 고키, 개앞맵시, 한빛미디어
@@ -61,6 +60,6 @@ MNIST 에 대해 살펴보고, 기존의 학습된 신경망으로 인식을 시
 * 텐서플로우 튜토리얼 (한글) https://goo.gl/UNPnE3
 * 모두를 위한 딥러닝 시즌1  https://goo.gl/dJw6mn
 * Andrew Ng’s Machine Learning   https://www.coursera.org/learn/machine-learning
-* 중학교, 고등학교 수학 교과서  https://goo.gl/PJhmmu
+* 중학교, 고등학교 수학 교과서 
 * 처음코딩 - 파이썬  https://opentutorials.org/course/2991
 * 깃허브 - https://goo.gl/C3dEAE
