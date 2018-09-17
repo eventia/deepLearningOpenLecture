@@ -48,7 +48,7 @@ MNIST 에 대해 살펴보고, 기존의 학습된 신경망으로 인식을 시
 
 ## Step10_Layer
 
-# Step11_LayerProgramming
+## Step11_LayerProgramming
 
 
 
