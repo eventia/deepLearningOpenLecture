@@ -11,7 +11,7 @@ from two_layer_net import TwoLayerNet
 
 network = TwoLayerNet(input_size=784, hidden_size=50, output_size=10)
 
-iters_num = 10000
+iters_num = 30000
 train_size = x_train.shape[0]
 batch_size = 100
 learning_rate = 0.1
@@ -21,6 +21,7 @@ train_acc_list = []
 test_acc_list = []
 
 iter_per_epoch = max(train_size / batch_size, 1)
+iter = 0
 
 for i in range(iters_num):
     batch_mask = np.random.choice(train_size, batch_size)
@@ -43,4 +44,5 @@ for i in range(iters_num):
         test_acc = network.accuracy(x_test, t_test)
         train_acc_list.append(train_acc)
         test_acc_list.append(test_acc)
-        print(train_acc, test_acc)
+        iter = iter + 1
+        print("iter = ", iter, " | ", train_acc, test_acc)
