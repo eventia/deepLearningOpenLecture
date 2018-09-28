@@ -1,4 +1,5 @@
 #! /bin/bash
+git pull
 git add --all .
 if [ "$1" = "" ]
 then 
