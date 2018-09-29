@@ -1,3 +1,20 @@
+[2018-09-29]
+Linux Script 작성, git bash 에서 "./g" 로 실행
++-------------------------------------------+[Start]
+#! /bin/bash
+git pull
+git add --all .
+if [ "$1" = "" ]
+then 
+	git commit -m "Commit at $(date +%Y%m%d)-$(date +%H%M)"
+else
+	git commit -m "$*"
+fi
+git push
++-------------------------------------------+[End]
+
+
+
 [2018-09-11] all.bat 설명
 아톰실행 후 자동으로 CLI 창 열기
 ===============================
